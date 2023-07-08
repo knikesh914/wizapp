@@ -29,6 +29,10 @@
     margin: auto;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 .navbar {
     position: fixed;
     width: 100%;
@@ -68,6 +72,18 @@ nav a.router-link-exact-active {
     text-decoration: none;
 }
 
+.onDark .logo a {
+    color: #fff !important;
+}
+
+.onDark .menu-items a {
+    color: #fff !important;
+}
+
+.onDark .icon {
+    color: #fff;
+}
+
 .onDark.navbar {
     background-color: #000;
     color: #fff;
@@ -86,6 +102,14 @@ nav a.router-link-exact-active {
 
 .onDark .appMain .v-toolbar {
     background-color: #000;
+    color: #fff;
+}
+
+.onDark .myCart p {
+    color: #fff;
+}
+
+.onDark .myCart h3 {
     color: #fff;
 }
 

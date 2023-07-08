@@ -115,6 +115,7 @@ const store = createStore({
         ],
         cartItems: [],
         totalPrice: 0,
+        darkMode: false,
     },
     mutations: {
         updateCartItems(state, items) {
@@ -122,6 +123,9 @@ const store = createStore({
         },
         updateTotalPrice(state, totalPrice) {
             state.totalPrice = totalPrice;
+        },
+        SET_DARK_MODE(state, darkMode) {
+            state.darkMode = darkMode;
         },
 
     },
@@ -159,6 +163,18 @@ const store = createStore({
                 commit('updateTotalPrice', state.totalPrice);
             }
         },
+        toggleDarkMode({
+            commit,
+            state
+        }) {
+            const darkMode = !state.darkMode;
+            commit('SET_DARK_MODE', darkMode);
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        },
 
     },
     getters: {
@@ -168,6 +184,7 @@ const store = createStore({
         getProductById: (state) => (id) => {
             return state.products.find((product) => product.id === id);
         },
+        darkMode: state => state.darkMode,
 
     },
 });

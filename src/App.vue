@@ -9,7 +9,7 @@
         </v-btn>
       </router-link>
   </nav> -->
-  <nav class="navbar" :class="{ onDark: darkMode }">
+  <nav class="navbar"  :class="{ onDark: darkMode }">
         <div class="navbar-container container">
             <input type="checkbox" name="" id="">
             <div class="hamburger-lines">
@@ -25,7 +25,9 @@
                 <li> <router-link class="text-decoration-none" to="/cart">
                {{ cartItems.length }} <i class="fa fa-shopping-basket"></i>
                </router-link></li>
-               <li><a @click="toggleDarkMode" color="primary">{{ darkMode ? 'Light Mode' : 'Dark Mode' }}</a></li>
+               <li> <button @click="toggleDarkMode">
+            {{ darkMode ? "Light Mode" : "Dark Mode" }}
+          </button></li>
             </ul>
             <h5 class="logo"><router-link to="/">Shopping</router-link></h5>
         </div>
@@ -33,28 +35,19 @@
   <router-view/>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions, mapGetters  } from 'vuex';
 import './assets/custome.css';
-
 export default {
   data() {
-  return {
-    darkMode: false, 
-  };
-},
+    return {};
+  },
   computed: {
-    ...mapState(['cartItems']),
+    ...mapGetters(["darkMode"]),
+    ...mapState(["cartItems"]),
   },
   methods: {
-  toggleDarkMode() {
-    this.darkMode = !this.darkMode;
-    if (this.darkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
+    ...mapActions(["toggleDarkMode"]),
   },
-},
 };
 </script>
 <style>
@@ -81,6 +74,6 @@ nav a.router-link-exact-active {
 .dark-mode {
   background-color: #000 !important;
   color: #fff;
-  /* Add any other dark mode styles you want */
 }
+
 </style>
