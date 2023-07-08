@@ -69,7 +69,7 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #42b983; 
 }
 .dark-mode {
   background-color: #000 !important;

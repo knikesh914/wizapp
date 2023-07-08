@@ -67,17 +67,6 @@
   </script>
   
   <style scoped>
- .cart-card {
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.cart-image {
-  object-fit: cover;
-  height: 150px; /* Adjust the height value as needed */
-}
 
 .text-h5 {
   margin-bottom: 0;

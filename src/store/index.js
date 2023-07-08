@@ -111,7 +111,7 @@ const store = createStore({
                 categories: 'Phone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
             },
-            // Add more product objects as needed
+
         ],
         cartItems: [],
         totalPrice: 0,

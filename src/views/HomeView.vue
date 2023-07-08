@@ -1,7 +1,7 @@
 <template>
   <div class="appMain">
     <v-container class="my-5">
-      <v-card class="pa-1 my-5" flat height="60px" >
+      <v-card class="pa-1 my-5" flat height="60px">
         <v-toolbar dense>
           <v-text-field
             class="search-textarea"
