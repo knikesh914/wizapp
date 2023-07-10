@@ -8,6 +8,7 @@ const store = createStore({
                 name: 'Samsung',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 100,
+                cprice: 30,
                 review: 3,
                 categories: 'Phone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -17,6 +18,7 @@ const store = createStore({
                 name: 'Nokia',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 200,
+                cprice: 39,
                 review: 4,
                 categories: 'Phone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -26,6 +28,7 @@ const store = createStore({
                 name: 'Apple',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 140,
+                cprice: 80,
                 review: 3,
                 categories: 'Phone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -35,6 +38,7 @@ const store = createStore({
                 name: 'Boat',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 110,
+                cprice: 90,
                 review: 5,
                 categories: 'EarPhone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -44,6 +48,7 @@ const store = createStore({
                 name: 'JBL',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 1300,
+                cprice: 300,
                 review: 3,
                 categories: 'EarPhone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -53,6 +58,7 @@ const store = createStore({
                 name: 'Jazz',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 140,
+                cprice: 71,
                 review: 4,
                 categories: 'EarPhone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -62,6 +68,7 @@ const store = createStore({
                 name: 'LG',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 80,
+                cprice: 10,
                 review: 5,
                 categories: 'EarPhone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -71,6 +78,7 @@ const store = createStore({
                 name: 'Samsung',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 1100,
+                cprice: 90,
                 review: 3,
                 categories: 'Charger',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -80,6 +88,7 @@ const store = createStore({
                 name: 'IQue',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 190,
+                cprice: 43,
                 review: 5,
                 categories: 'Charger',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -89,6 +98,7 @@ const store = createStore({
                 name: 'Oppo',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 400,
+                cprice: 230,
                 review: 4,
                 categories: 'Charger',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -98,6 +108,7 @@ const store = createStore({
                 name: 'Vivo',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 230,
+                cprice: 130,
                 review: 3,
                 categories: 'Charger',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -107,6 +118,7 @@ const store = createStore({
                 name: 'Blackberry',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,',
                 price: 260,
+                cprice: 60,
                 review: 5,
                 categories: 'Phone',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtSEFFpil4Rg0ulT2xMbuelj9GAlyiKXkSLUZd55nrhiGiN5gOnnESq_OwEMjaR4nC8w&usqp=CAU',
@@ -145,7 +157,7 @@ const store = createStore({
 
             }
 
-            state.totalPrice += product.price; // Add the price of the added product to the total price
+            state.totalPrice += product.price;
             commit('updateCartItems', state.cartItems);
             commit('updateTotalPrice', state.totalPrice);
         },
@@ -158,7 +170,7 @@ const store = createStore({
                 } else {
                     item.quantity--;
                 }
-                state.totalPrice -= product.price; // Subtract the price of the removed product from the total price
+                state.totalPrice -= product.price;
                 commit('updateCartItems', state.cartItems);
                 commit('updateTotalPrice', state.totalPrice);
             }

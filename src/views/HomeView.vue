@@ -1,40 +1,45 @@
 <template>
   <div class="appMain">
     <v-container class="my-5">
-      <v-card class="pa-1 my-5" flat height="60px">
-        <v-toolbar dense>
-          <v-text-field
-            class="search-textarea"
-            rows="1"
-            placeholder="Search"
-            v-model="searchQuery"
-          ></v-text-field>
+      <v-card class="my-5" flat height="54px">
+        <v-toolbar>
+          <div class="search-box">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Search something.."
+              v-model="searchQuery"
+            />
+            <button class="search-btn"><i class="fa fa-search"></i></button>
+          </div>
 
-          <span @click="toggleSortDirection('price')">
-            Price
-          </span>
+          <div class="left-option">
+            <span @click="toggleSortDirection('price')"> Price </span>
 
-          <span @click="toggleSortDirection('review')" style="margin-left: 8px;">
-          Review
-          </span>
-          
-          <div class="text-center">
-            <v-menu open-on-hover>
-              <template v-slot:activator="{ props }">
-                <v-btn
-                  color="primary"
-                  v-bind="props"
-                >
-                  Categories
-                </v-btn>
-              </template>
+            <span
+              @click="toggleSortDirection('review')"
+              style="margin-left: 8px"
+            >
+              Review
+            </span>
 
-              <v-list>
-                <v-list-item v-for="category in getProductCategories()" :key="category" @click="filterByCategory(category)">
-                  <v-list-item-title>{{ category }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-menu>
+            <div class="text-center" style="position: relative; top: -5px">
+              <v-menu open-on-hover>
+                <template v-slot:activator="{ props }">
+                  <v-btn color="dark" v-bind="props"> Categories </v-btn>
+                </template>
+
+                <v-list>
+                  <v-list-item
+                    v-for="category in getProductCategories()"
+                    :key="category"
+                    @click="filterByCategory(category)"
+                  >
+                    <v-list-item-title>{{ category }}</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </div>
           </div>
         </v-toolbar>
       </v-card>
@@ -47,34 +52,32 @@
           v-for="product in filteredProducts"
           :key="product.id"
         >
-          <v-card
-            class="mx-auto"
-            max-width="344"
-            hover
-            style="border: 1px solid grey;"
-           
-          >
-          <div  @click="goToProductDetail(product.id)">
-            <v-img :src="product.image"></v-img>
-
-            <v-card-title class="text-left">
-              {{ product.name }}
-            </v-card-title>
-
-            <v-card-subtitle class="text-left">
-              {{ product.description }}
-            </v-card-subtitle>
-            <v-card-subtitle class="text-left">
-              ₹ {{ product.price }}
-            </v-card-subtitle>
-          </div>
-
-            <v-card-actions>
-              <v-btn size="small" color="primary" @click="addToCart(product)">
-                Add to cart
-              </v-btn>
-              <v-spacer></v-spacer>
-            </v-card-actions>
+          <v-card>
+            <div class="product-card">
+              <div class="badge">Hot</div>
+              <div class="product-tumb" @click="goToProductDetail(product.id)">
+                <img :src="product.image" alt="" />
+              </div>
+              <div class="product-details">
+                <a @click="goToProductDetail(product.id)">
+                  <span class="product-catagory">{{ product.categories }}</span>
+                  <h4>
+                    <a>{{ product.name }}</a>
+                  </h4>
+                  <p>{{ product.description.substring(0, 80) + ".." }}</p>
+                </a>
+                <div class="product-bottom-details">
+                  <div class="product-price">
+                    <small>₹{{ product.cprice }}</small> ₹ {{ product.price }}
+                  </div>
+                  <div class="product-links">
+                    <a @click="addToCart(product)"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </v-card>
         </v-col>
       </v-row>
@@ -83,31 +86,32 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
     return {
-      searchQuery: '', 
-      sortDirection: 'asc', 
-      sortField: 'price', 
-      selectedCategory: '',
+      searchQuery: "",
+      sortDirection: "asc",
+      sortField: "price",
+      selectedCategory: "",
     };
   },
   computed: {
-    ...mapGetters(['products']),
+    ...mapGetters(["products"]),
     filteredProducts() {
-      
       let filtered = this.products;
       if (this.searchQuery) {
         const query = this.searchQuery.toLowerCase();
-        filtered = filtered.filter(product =>
+        filtered = filtered.filter((product) =>
           product.name.toLowerCase().includes(query)
         );
       }
       if (this.selectedCategory) {
-        filtered = filtered.filter(product =>
-          Array.isArray(product.categories) ? product.categories.includes(this.selectedCategory) : product.categories === this.selectedCategory
+        filtered = filtered.filter((product) =>
+          Array.isArray(product.categories)
+            ? product.categories.includes(this.selectedCategory)
+            : product.categories === this.selectedCategory
         );
       }
 
@@ -115,9 +119,7 @@ export default {
       filtered = filtered.sort((a, b) => {
         const aValue = this.getFieldValue(a, this.sortField);
         const bValue = this.getFieldValue(b, this.sortField);
-        return (
-          (this.sortDirection === 'asc' ? 1 : -1) * (aValue - bValue)
-        );
+        return (this.sortDirection === "asc" ? 1 : -1) * (aValue - bValue);
       });
 
       return filtered;
@@ -127,20 +129,20 @@ export default {
     this.fetchProducts();
   },
   methods: {
-    ...mapActions(['fetchProducts', 'addToCart']),
+    ...mapActions(["fetchProducts", "addToCart"]),
     goToProductDetail(productId) {
       this.$router.push(`/product/${productId}`);
     },
     toggleSortDirection(field) {
       if (this.sortField === field) {
-        this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+        this.sortDirection = this.sortDirection === "asc" ? "desc" : "asc";
       } else {
         this.sortField = field;
-        this.sortDirection = 'asc';
+        this.sortDirection = "asc";
       }
     },
     getFieldValue(obj, field) {
-      if (typeof obj[field] === 'string') {
+      if (typeof obj[field] === "string") {
         return obj[field].toLowerCase();
       }
       return obj[field];
@@ -165,6 +167,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
