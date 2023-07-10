@@ -12,7 +12,7 @@
           <div class="half">
             <div class="featured_text">
               <h1>{{ product.name }}</h1>
-              <p class="sub">{{ product.categories }}</p>
+              <p class="sub">{{ product.categories }}</p> 
               <p class="price">₹ {{ product.price }}</p>
             </div>
             <div class="image">

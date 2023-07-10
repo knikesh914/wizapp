@@ -524,7 +524,6 @@ main {
 .card .card__footer .action button:hover {
     background: #fff;
     color: #383b3f;
-    ;
 }
 
 @media (max-width: 768px) {

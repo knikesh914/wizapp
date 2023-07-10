@@ -1,1 +1,0 @@
-.star-rating input{display:none}.star-rating label{color:#ccc;cursor:pointer;font-size:30px}.star-rating :checked~label{color:#f90;font-size:30px}.star-rating label:hover,.star-rating label:hover~label{color:#fc0;font-size:30px}

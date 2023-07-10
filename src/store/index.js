@@ -187,7 +187,6 @@ const store = createStore({
                 document.body.classList.remove('dark-mode');
             }
         },
-
     },
     getters: {
         products: (state) => state.products,
@@ -197,7 +196,6 @@ const store = createStore({
             return state.products.find((product) => product.id === id);
         },
         darkMode: state => state.darkMode,
-
     },
 });
 
