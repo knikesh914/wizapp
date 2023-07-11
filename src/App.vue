@@ -1,14 +1,4 @@
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <router-link class="text-decoration-none" to="/cart">
-        <v-btn text>
-          <v-icon left>mdi-cart</v-icon>
-          {{ cartItems.length }} items
-        </v-btn>
-      </router-link>
-  </nav> -->
   <nav class="navbar"  :class="{ onDark: darkMode }">
         <div class="navbar-container container">
             <input type="checkbox" name="" id="">
@@ -72,8 +62,8 @@ nav a.router-link-exact-active {
   color: #42b983; 
 }
 .dark-mode {
-  background-color: #000 !important;
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 </style>

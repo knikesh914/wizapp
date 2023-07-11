@@ -2,6 +2,71 @@
     font-size: 62.5%;
 }
 
+
+/* Define CSS variables for Theme Change */
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #42b983;
+    --background-color: #fff;
+    --text-color: #000;
+}
+
+body {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.dark-mode {
+    --primary-color: #fff;
+    --secondary-color: #42b983;
+    --background-color: #000;
+    --text-color: #fff;
+}
+
+.onDark .logo a,
+.onDark .menu-items a,
+.onDark .icon,
+.onDark.navbar,
+.onDark.appMain .v-card,
+.onDark.detailPage .v-card,
+.onDark .appMain .v-toolbar,
+.onDark .myCart p,
+.onDark .myCart h3 {
+    color: var(--text-color);
+}
+
+.onDark.navbar,
+.onDark.appMain .v-card,
+.onDark.detailPage .v-card,
+.onDark .appMain .v-toolbar {
+    background-color: var(--background-color);
+}
+
+.onDark.detailPage .v-card {
+    border: 1px solid var(--text-color);
+}
+
+.onDark .logo a {
+    color: var(--text-color)!important;
+}
+
+.onDark .menu-items a {
+    color: var(--text-color)!important;
+}
+
+.onDark .icon {
+    color: var(--text-color)!important;
+}
+
+.onDark.navbar {
+    background-color: var(--background-color);
+    color: var(--text-color)!important;
+}
+
 .appMain {
     padding-top: 40px;
 }
@@ -70,47 +135,6 @@ a {
 nav a.router-link-exact-active {
     color: #1d1d1d !important;
     text-decoration: none;
-}
-
-.onDark .logo a {
-    color: #fff !important;
-}
-
-.onDark .menu-items a {
-    color: #fff !important;
-}
-
-.onDark .icon {
-    color: #fff;
-}
-
-.onDark.navbar {
-    background-color: #000;
-    color: #fff;
-}
-
-.onDark.appMain .v-card {
-    background-color: #000;
-    color: #fff;
-}
-
-.onDark.detailPage .v-card {
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #fff;
-}
-
-.onDark .appMain .v-toolbar {
-    background-color: #000;
-    color: #fff;
-}
-
-.onDark .myCart p {
-    color: #fff;
-}
-
-.onDark .myCart h3 {
-    color: #fff;
 }
 
 .search-box {
